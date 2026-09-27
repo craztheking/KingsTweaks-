@@ -8,25 +8,6 @@ Editing the config file on a running server applies the changes live and pushes 
 
 Note If you want the version with the auto-updater, download it from GitHub. The Nexus build has it removed, as Nexus does not allow mods that connect to the internet.
 
-Contents
-Structures
-Wards
-Fires and torches
-Buildable chests
-Crafting and storage
-Portal Hubs
-Portals
-Boats
-Tames
-Planting
-Beds and doors
-World and comfort
-Dropped items
-Interface
-Chat
-Commands
-Server tools
-Installation
 Structures
 Structures don't decay from rain, even without a roof.
 Optional protection from water damage (waves, tides, flooded ground).
