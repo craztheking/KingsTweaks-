@@ -6,8 +6,6 @@ Every feature can be turned on or off, and the server's settings are enforced on
 
 Editing the config file on a running server applies the changes live and pushes them to everyone; most changes require no restart. Admins can also edit settings from an in-game menu.
 
-**Note:** if you want the version with the auto-updater, download it from GitHub. The Nexus build has it removed, as Nexus does not allow mods that connect to the internet.
-
 ---
 
 ## Structures
@@ -47,7 +45,7 @@ Editing the config file on a running server applies the changes live and pushes 
 A buildable portal that travels to any other hub linked to it.
 
 - Name a hub with the normal portal name box; names are unique across the world.
-- Walk into a hub to open its destination list; press Use to manage links.
+- Walk into a hub to open its destination list; press Use to manage links. Step away and the list closes.
 - Link destinations by name, so nobody can travel to a hub they weren't given.
 - Links to hubs that no longer exist are removed automatically.
 - Hubs you build are pinned on your map automatically.
@@ -70,10 +68,16 @@ A buildable portal that travels to any other hub linked to it.
 - Tame animals standing on a boat stay put instead of wandering off or jumping into deep water.
 - Press a key on a tame near a boat to put it on board; press again to take it off onto dry land.
 - Tames following you come through portals and Portal Hubs with you.
+- Adjustable health for tamed animals, either one multiplier for everything or per species, e.g. `Boar:2, Wolf:4`. Wild animals are untouched.
 
 ## Planting
 
 - Berry bushes, mushrooms, thistle and dandelions can be planted with the cultivator and grow over time.
+- No spacing rule: crops never say they need more room to grow, so you can plant them right next to each other.
+
+## Combat
+
+- Your shield is drawn automatically when you equip a one-handed weapon, bringing back whichever shield you last carried. Toggle with `/autoshield`.
 
 ## Beds and doors
 
@@ -92,8 +96,9 @@ A buildable portal that travels to any other hub linked to it.
 
 ## Interface
 
-- **Compass** across the top of the screen, showing headings plus your map pins with their icons and distances. Pins you've crossed out on the map are left off. Toggle with `/compass`.
+- **Compass** across the top of the screen, showing headings plus your map pins with their icons and distances. Pins you've crossed out on the map are left off, and it hides while the full map is open. Toggle with `/compass`.
 - **First person:** zoom all the way in and the camera moves to your eyes. Zoom back out for the normal view.
+- **First run hint:** the first time you play, a message tells you which key opens the settings. Only shown to players who can actually change them.
 - **In-game settings menu** on the Home key. Admins can change any setting live; everyone else sees the server's values.
 - **Activity feed:** short messages on the left when your chests do something. Toggle with `/uinotifications`.
 - **Mist clearing:** `/mist` clears the Mistlands fog around you, with an adjustable radius. Admins can disable it server-wide.
@@ -103,7 +108,7 @@ A buildable portal that travels to any other hub linked to it.
 
 - Chat is server-wide by default instead of local, with a key to switch between the two.
 - Shouted messages and pings stay in the chat window instead of appearing above players' heads.
-- Death notifications in server chat, with the biome the player died in.
+- Death notifications in server chat, saying what killed you and the biome you died in, e.g. "was killed by a Greydwarf in the Black Forest".
 - Message of the day, shown once when a player joins.
 
 ## Commands
@@ -114,7 +119,15 @@ A buildable portal that travels to any other hub linked to it.
 - `/linkall` — links every hub you built to the hub you're standing at.
 - `/mist` — clears or restores the Mistlands fog around you.
 - `/compass` — turns the compass strip on or off.
+- `/autoshield` — draws your shield automatically with a one-handed weapon.
 - `/uinotifications` — turns the corner activity messages on or off.
+
+## Server settings worth knowing
+
+- **Map off:** a server can take the minimap and the full map away from everyone.
+- **Compass off:** a server can disable the compass for everyone, whatever each player has chosen.
+- **Mist clearing** can be disabled server-wide, and so can `/unstuck`.
+- Personal choices such as the compass, activity feed and auto-shield are kept per player and are never overwritten by the server.
 
 ## Server tools
 
@@ -131,3 +144,5 @@ Requires BepInEx.
 
 1. Install `KingsTweaks.dll` in `BepInEx/plugins` on the server and on each client.
 2. Launch the game once. The config file is created at `BepInEx/config/dev.craz.kingstweaks.cfg`.
+
+Updating is safe: if a release moves settings into different sections, your existing values are carried across to the new layout automatically. Your own display preferences live in a separate file, so a server never overwrites them.
