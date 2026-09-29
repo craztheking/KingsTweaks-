@@ -70,12 +70,22 @@ A buildable portal that travels to any other hub linked to it.
 - Tame animals standing on a boat stay put instead of wandering off or jumping into deep water.
 - Press a key on a tame near a boat to put it on board; press again to take it off onto dry land.
 - Tames following you come through portals and Portal Hubs with you.
+- Hold your stow key on a tame to track it on the map; the marker follows it. Hold again to stop.
 - Adjustable health for tamed animals, either one multiplier for everything or per species, e.g. `Boar:2, Wolf:4`. Wild animals are untouched, and each animal remembers its original health so changing the multiplier always scales from that.
 
 ## Planting
 
 - Berry bushes, mushrooms, thistle and dandelions can be planted with the cultivator and grow over time.
 - No spacing rule: crops never say they need more room to grow, so you can plant them right next to each other.
+
+## Teams
+
+- Create a team from the **Team** button on the pause menu, or with `/team`.
+- Look at another player and hold your stow key to invite them; they accept or decline from the same window.
+- **Team chat** with `/t your message`.
+- **Map pings** are only seen by your own team. Players with no team see pings as normal.
+- **A health list** under the minimap, showing each team mate and how they're doing.
+- **Wards let your team through** without adding anyone by hand.
 
 ## Combat
 
@@ -99,7 +109,7 @@ A buildable portal that travels to any other hub linked to it.
 ## Interface
 
 - **Compass** across the top of the screen, showing headings plus your map pins with their icons and distances. Pins you've crossed out on the map are left off, and it hides while the full map is open. Toggle with `/compass`.
-- **First person:** zoom all the way in and the camera moves to your eyes; zoom back out for the normal view. The camera follows your head, so it ducks when you crouch and sit, and head bob can be turned off. Every camera setting can be adjusted from the in-game menu and applies instantly, so you can find your preferred view while looking at it. Servers can disable first person or require it.
+- **First person:** zoom all the way in and the camera moves to your eyes; zoom back out for the normal view. Your body faces where you look, so you can walk backwards without turning around. The camera follows your head, so it ducks when you crouch and sit, and head bob can be turned off. Every camera setting can be adjusted from the in-game menu and applies instantly, so you can find your preferred view while looking at it. Servers can disable first person or require it.
 - **First run hint:** the first time you play, a message tells you which key opens the settings. Only shown to players who can actually change them.
 - **In-game settings menu** on the Home key. Admins can change any setting live, and every player can change their own settings there even on someone else's server.
 - **Activity feed:** short messages on the left when your chests do something. Toggle with `/uinotifications`.
@@ -109,7 +119,7 @@ A buildable portal that travels to any other hub linked to it.
 ## Chat
 
 - Chat is server-wide by default instead of local, with a key to switch between the two.
-- Shouted messages and pings stay in the chat window instead of appearing above players' heads.
+- Shouted messages stay in the chat window instead of appearing above players' heads, and shouts are shown as typed rather than IN CAPITALS.
 - Death notifications in server chat, saying what killed you and the biome you died in, e.g. "was killed by a Greydwarf in the Black Forest".
 - Message of the day, shown once when a player joins.
 
@@ -122,6 +132,8 @@ A buildable portal that travels to any other hub linked to it.
 - `/mist` — clears or restores the Mistlands fog around you.
 - `/compass` — turns the compass strip on or off.
 - `/autoshield` — draws your shield automatically with a one-handed weapon.
+- `/team` — opens the team window.
+- `/t <message>` — sends a message to your team.
 - `/uinotifications` — turns the corner activity messages on or off.
 
 ## Server settings worth knowing
