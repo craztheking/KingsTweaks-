@@ -1,8 +1,10 @@
 # KingsTweaks
 
-A quality-of-life mod for Valheim.
+An all-in-one quality-of-life mod for Valheim, for both servers and single player.
 
-Every feature can be turned on or off, and the server's settings are enforced on all connected players automatically without losing your singleplayer or personal config.
+Install it on a server and every connected player gets the same rules, enforced automatically. Install it on your own game and it works exactly the same way on your own worlds.
+
+Every feature can be turned on or off, and your own display preferences stay yours on any server.
 
 Editing the config file on a running server applies the changes live and pushes them to everyone; most changes require no restart. Admins can also edit settings from an in-game menu.
 
@@ -68,7 +70,7 @@ A buildable portal that travels to any other hub linked to it.
 - Tame animals standing on a boat stay put instead of wandering off or jumping into deep water.
 - Press a key on a tame near a boat to put it on board; press again to take it off onto dry land.
 - Tames following you come through portals and Portal Hubs with you.
-- Adjustable health for tamed animals, either one multiplier for everything or per species, e.g. `Boar:2, Wolf:4`. Wild animals are untouched.
+- Adjustable health for tamed animals, either one multiplier for everything or per species, e.g. `Boar:2, Wolf:4`. Wild animals are untouched, and each animal remembers its original health so changing the multiplier always scales from that.
 
 ## Planting
 
@@ -97,9 +99,9 @@ A buildable portal that travels to any other hub linked to it.
 ## Interface
 
 - **Compass** across the top of the screen, showing headings plus your map pins with their icons and distances. Pins you've crossed out on the map are left off, and it hides while the full map is open. Toggle with `/compass`.
-- **First person:** zoom all the way in and the camera moves to your eyes. Zoom back out for the normal view.
+- **First person:** zoom all the way in and the camera moves to your eyes; zoom back out for the normal view. The camera follows your head, so it ducks when you crouch and sit, and head bob can be turned off. Every camera setting can be adjusted from the in-game menu and applies instantly, so you can find your preferred view while looking at it. Servers can disable first person or require it.
 - **First run hint:** the first time you play, a message tells you which key opens the settings. Only shown to players who can actually change them.
-- **In-game settings menu** on the Home key. Admins can change any setting live; everyone else sees the server's values.
+- **In-game settings menu** on the Home key. Admins can change any setting live, and every player can change their own settings there even on someone else's server.
 - **Activity feed:** short messages on the left when your chests do something. Toggle with `/uinotifications`.
 - **Mist clearing:** `/mist` clears the Mistlands fog around you, with an adjustable radius. Admins can disable it server-wide.
 - Optional: hide Yggdrasil, the giant tree in the sky.
@@ -113,7 +115,7 @@ A buildable portal that travels to any other hub linked to it.
 
 ## Commands
 
-- `/help` — lists every KingsTweaks command.
+- `/kt` — lists every KingsTweaks command. The game's own `/help` lists everything else.
 - `/unstuck` — moves you to solid ground nearby. Can be disabled server-side, with a cooldown.
 - `/myhubs` — lists the Portal Hubs you built, with coordinates.
 - `/linkall` — links every hub you built to the hub you're standing at.
@@ -124,10 +126,12 @@ A buildable portal that travels to any other hub linked to it.
 
 ## Server settings worth knowing
 
-- **Map off:** a server can take the minimap and the full map away from everyone.
+- **Map off:** the minimap and full map can be taken away from everyone, and switched back on without a restart.
 - **Compass off:** a server can disable the compass for everyone, whatever each player has chosen.
+- **First person off or forced:** a server can take first person away, or require it for everyone.
 - **Mist clearing** can be disabled server-wide, and so can `/unstuck`.
-- Personal choices such as the compass, activity feed and auto-shield are kept per player and are never overwritten by the server.
+- **Ward respect:** the Fuel, Upkeep and craft-from-chests features ignore anything inside a ward the owner isn't permitted on.
+- Personal choices such as the compass, activity feed, auto-shield and camera placement are kept per player and are never overwritten by the server. Players can change those from the in-game menu even on a server they don't administer.
 
 ## Server tools
 
