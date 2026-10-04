@@ -57,6 +57,7 @@ A buildable portal that travels to any other hub linked to it.
 
 - Adjustable range at which portals light up and activate.
 - Optional **teleport everything**: ore, metal bars and anything else normally blocked can go through portals.
+- A server can take ordinary portals out of the build menu entirely, leaving Portal Hubs as the only way to travel.
 
 ## Boats
 
@@ -84,7 +85,7 @@ A buildable portal that travels to any other hub linked to it.
 - Look at another player and hold your stow key to invite them; they accept or decline from the same window.
 - **Team chat** with `/t your message`.
 - **Map pings** are only seen by your own team. Players with no team see pings as normal.
-- **A health list** under the minimap, showing each team mate and how they're doing.
+- **A health list** under the minimap, showing each team mate and how they're doing, with no panel in the way.
 - **Wards let your team through** without adding anyone by hand.
 
 ## Combat
@@ -105,6 +106,7 @@ A buildable portal that travels to any other hub linked to it.
 
 - Items float on the water surface instead of sinking.
 - Nearby dropped items of the same type merge into one stack, reducing clutter and improving server performance.
+- Collectors only take loose items: anything placed on a table, a stand or a build piece is left alone.
 
 ## Interface
 
@@ -115,6 +117,10 @@ A buildable portal that travels to any other hub linked to it.
 - **Activity feed:** short messages on the left when your chests do something. Toggle with `/uinotifications`.
 - **Mist clearing:** `/mist` clears the Mistlands fog around you, with an adjustable radius. Admins can disable it server-wide.
 - Optional: hide Yggdrasil, the giant tree in the sky.
+
+## Appearance
+
+- `/dye #aa3344` colours the item in your first hotbar slot; `/dye clear` undoes it. The colour lives on the item, so it survives dropping, trading and relogging, and everyone sees it. Off by default while it's being tested.
 
 ## Chat
 
@@ -134,6 +140,8 @@ A buildable portal that travels to any other hub linked to it.
 - `/autoshield` — draws your shield automatically with a one-handed weapon.
 - `/team` — opens the team window.
 - `/t <message>` — sends a message to your team.
+- `/dye <colour>` — colours the item in your first slot.
+- `/fpparts` — lists the parts of your character, for the first person hide list.
 - `/uinotifications` — turns the corner activity messages on or off.
 
 ## Server settings worth knowing
