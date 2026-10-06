@@ -88,6 +88,13 @@ A buildable portal that travels to any other hub linked to it.
 - **A health list** under the minimap, showing each team mate and how they're doing, with no panel in the way.
 - **Wards let your team through** without adding anyone by hand.
 
+## Travel
+
+- `/sethome` and `/home` remember a spot and take you back to it.
+- `/tpr <player>` asks if you can travel to them; `/tphere <player>` asks them to come to you. They accept with `/tpa` or refuse with `/tpdeny`.
+- A countdown before you arrive, cancelled if you're hit, plus a cooldown between journeys.
+- Travel is refused for a while after you've taken damage and while an enemy is close by. All of it is configurable, and a server can turn the whole thing off.
+
 ## Combat
 
 - Your shield is drawn automatically when you equip a one-handed weapon, bringing back whichever shield you last carried. Toggle with `/autoshield`.
@@ -95,7 +102,16 @@ A buildable portal that travels to any other hub linked to it.
 ## Beds and doors
 
 - **Beds:** tap E on an unclaimed bed to sleep in it without claiming it or changing your spawn point. Hold E to claim it normally and set your spawn.
-- **Doors:** tap E to open a door away from you, hold E to open it towards you.
+- **Doors:** tap E to open a door away from you, hold E to open it towards you. Doors still work with the hammer out.
+- **Door locks:** press your stow key on a door inside your ward to lock it. A locked door only opens for people the ward permits, and the lock stays put across sessions.
+- **Chests:** hold E on a chest to give it a name.
+
+## Locks
+
+- Press your stow key on a door, a chest or a ward to lock it.
+- A locked thing only opens for people the ward permits; everyone else is told it's locked.
+- Doors and chests have to be inside a ward to be locked. A ward is its own authority, so locking one stops anyone it doesn't permit switching it off or editing its list.
+- Locks live on the object, so they hold across sessions and apply to every player.
 
 ## World and comfort
 
@@ -144,6 +160,10 @@ A buildable portal that travels to any other hub linked to it.
 - `/fpparts` — lists the parts of your character, for the first person hide list.
 - `/uinotifications` — turns the corner activity messages on or off.
 
+## Repair
+
+- Standing at a workbench or forge repairs everything you're carrying that the station could repair by hand.
+
 ## Server settings worth knowing
 
 - **Map off:** the minimap and full map can be taken away from everyone, and switched back on without a restart.
@@ -151,6 +171,11 @@ A buildable portal that travels to any other hub linked to it.
 - **First person off or forced:** a server can take first person away, or require it for everyone.
 - **Mist clearing** can be disabled server-wide, and so can `/unstuck`.
 - **Ward respect:** the Fuel, Upkeep and craft-from-chests features ignore anything inside a ward the owner isn't permitted on.
+- **Forced PvP:** everyone is flagged and can't switch it off.
+- **Spawn scaling:** hostile creatures and passive animals can be multiplied separately, from a quarter to ten times.
+- **No portals:** ordinary portals can be removed from the build menu, leaving Portal Hubs as the only travel.
+- **Hub travel cost:** each hub journey can cost an item, set in the config.
+- **`/who` for admins only**, if you'd rather players couldn't see who's online.
 - Personal choices such as the compass, activity feed, auto-shield and camera placement are kept per player and are never overwritten by the server. Players can change those from the in-game menu even on a server they don't administer.
 
 ## Server tools
@@ -158,6 +183,8 @@ A buildable portal that travels to any other hub linked to it.
 - **Server password saver:** the password you enter when joining a server is saved and entered automatically next time. If it changes, you're prompted for the new one.
 - **Continue button** on the main menu, loading whatever you played last: the same character plus either that world or that server.
 - **World backups:** after the game saves, the world files are copied into a backups folder, keeping as many as you choose and deleting the oldest.
+- **Scheduled restarts:** at times you set, everyone is warned in chat, the world is saved and the server closes. Starting it again is up to your start script or service, since a game can't relaunch itself.
+- **Playtime tracking** per player, surviving restarts, readable with `/playtime`.
 - **Version enforcement:** players must run the same KingsTweaks version to join. Anyone without the mod is disconnected.
 
 ---
