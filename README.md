@@ -83,21 +83,24 @@ A buildable portal that travels to any other hub linked to it.
 
 - Create a team from the **Team** button on the pause menu, or with `/team`.
 - Look at another player and hold your stow key to invite them; they accept or decline from the same window.
+- **Ranks:** whoever makes the team leads it. The leader can promote members to officer, demote them, remove anyone, and hand the team over. Officers can invite and remove ordinary members. If the leader leaves, an officer takes over.
 - **Team chat** with `/t your message`.
 - **Map pings** are only seen by your own team. Players with no team see pings as normal.
 - **A health list** under the minimap, showing each team mate and how they're doing, with no panel in the way.
 - **Wards let your team through** without adding anyone by hand.
+- Teams and ranks survive restarts.
 
 ## Travel
 
 - `/sethome` and `/home` remember a spot and take you back to it.
-- `/tpr <player>` asks if you can travel to them; `/tphere <player>` asks them to come to you. They accept with `/tpa` or refuse with `/tpdeny`.
+- `/tpr <player>` asks if you can travel to them; `/tphere <player>` asks them to come to you. They accept with `/tpa` (or `/tpaccept`) and refuse with `/tpdeny`.
 - A countdown before you arrive, cancelled if you're hit, plus a cooldown between journeys.
 - Travel is refused for a while after you've taken damage and while an enemy is close by. All of it is configurable, and a server can turn the whole thing off.
 
 ## Combat
 
 - Your shield is drawn automatically when you equip a one-handed weapon, bringing back whichever shield you last carried. Toggle with `/autoshield`.
+- **Guardian power resets when you die**, so you respawn ready instead of carrying a cooldown through death.
 
 ## Beds and doors
 
@@ -105,6 +108,10 @@ A buildable portal that travels to any other hub linked to it.
 - **Doors:** tap E to open a door away from you, hold E to open it towards you. Doors still work with the hammer out.
 - **Door locks:** press your stow key on a door inside your ward to lock it. A locked door only opens for people the ward permits, and the lock stays put across sessions.
 - **Chests:** hold E on a chest to give it a name.
+
+## Signs
+
+- Signs hold more text than the game normally allows — 150 characters by default, adjustable. Long text still has to fit on the sign, so it gets small.
 
 ## Locks
 
@@ -117,6 +124,10 @@ A buildable portal that travels to any other hub linked to it.
 
 - Separate multipliers for how long, or short, days and nights last.
 - Comfort pieces count from farther away (20 m by default instead of 10 m), so big halls reach higher comfort levels.
+
+## Map
+
+- **Exploration multiplier:** choose how much of the map you uncover as you travel. 2 reveals twice as far as normal, 0.5 half as far. Map you already have stays as it is.
 
 ## Dropped items
 
@@ -136,7 +147,9 @@ A buildable portal that travels to any other hub linked to it.
 
 ## Appearance
 
-- `/dye #aa3344` colours the item in your first hotbar slot; `/dye clear` undoes it. The colour lives on the item, so it survives dropping, trading and relogging, and everyone sees it. Off by default while it's being tested.
+- `/dye #aa3344` colours the item in your first hotbar slot, and `/dye 3 black` colours slot 3 instead. Named colours work as well as hex: red, blue, green, purple, pink, black, white and others.
+- `/dye clear` puts an item back to normal.
+- The colour lives on the item, so it survives dropping, trading and relogging, and everyone else sees it too.
 
 ## Chat
 
@@ -156,9 +169,20 @@ A buildable portal that travels to any other hub linked to it.
 - `/autoshield` — draws your shield automatically with a one-handed weapon.
 - `/team` — opens the team window.
 - `/t <message>` — sends a message to your team.
-- `/dye <colour>` — colours the item in your first slot.
+- `/dye <colour>` — colours the item in your first slot. `/dye 3 black` colours slot 3 instead.
+- `/teamkick`, `/teampromote`, `/teamdemote`, `/teamleader` — manage your team.
 - `/fpparts` — lists the parts of your character, for the first person hide list.
 - `/uinotifications` — turns the corner activity messages on or off.
+- `/who` — lists everyone online. A server can limit this to admins.
+- `/playtime` — your time on the server, or `/playtime <player>` for someone else's.
+
+**Admin only**
+
+- `/admin <name or Steam64 ID>` — makes a player an admin; `/removeadmin` takes it away. A name works for anyone currently online.
+- `/tp <player>` — takes you straight to them.
+- `/heal` — fills your health, stamina and eitr.
+- `/repair` — mends everything you're carrying.
+- `/freebuild` — build without paying for materials.
 
 ## Repair
 
@@ -166,7 +190,8 @@ A buildable portal that travels to any other hub linked to it.
 
 ## Server settings worth knowing
 
-- **Map off:** the minimap and full map can be taken away from everyone, and switched back on without a restart.
+- **Map off:** the minimap and the full map can each be taken away from everyone, separately, and switched back on without a restart.
+- **Map exploration:** how much of the world each player uncovers as they travel.
 - **Compass off:** a server can disable the compass for everyone, whatever each player has chosen.
 - **First person off or forced:** a server can take first person away, or require it for everyone.
 - **Mist clearing** can be disabled server-wide, and so can `/unstuck`.
