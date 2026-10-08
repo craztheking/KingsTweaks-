@@ -96,6 +96,7 @@ A buildable portal that travels to any other hub linked to it.
 - `/tpr <player>` asks if you can travel to them; `/tphere <player>` asks them to come to you. They accept with `/tpa` (or `/tpaccept`) and refuse with `/tpdeny`.
 - A countdown before you arrive, cancelled if you're hit, plus a cooldown between journeys.
 - Travel is refused for a while after you've taken damage and while an enemy is close by. All of it is configurable, and a server can turn the whole thing off.
+- **Server warps:** an admin stands somewhere and runs `/addtp trader 300` to make `/trader` available to everyone, with a five minute wait between uses. `/tplist` shows what a server offers. Warps use the same countdown and combat rules as everything else, so they aren't an escape hatch.
 
 ## Combat
 
@@ -106,8 +107,8 @@ A buildable portal that travels to any other hub linked to it.
 
 - **Beds:** tap E on an unclaimed bed to sleep in it without claiming it or changing your spawn point. Hold E to claim it normally and set your spawn.
 - **Doors:** tap E to open a door away from you, hold E to open it towards you. Doors still work with the hammer out.
-- **Door locks:** press your stow key on a door inside your ward to lock it. A locked door only opens for people the ward permits, and the lock stays put across sessions.
-- **Chests:** hold E on a chest to give it a name.
+- **Door locks:** tap your stow key on a door inside your ward to lock it. A locked door only opens for people the ward permits, and the lock stays put across sessions.
+- **Chests:** tap your stow key on a chest to lock it, hold it to give it a name.
 
 ## Signs
 
@@ -115,7 +116,7 @@ A buildable portal that travels to any other hub linked to it.
 
 ## Locks
 
-- Press your stow key on a door, a chest or a ward to lock it.
+- Tap your stow key on a door, a chest or a ward to lock it. Holding it on a chest renames the chest instead.
 - A locked thing only opens for people the ward permits; everyone else is told it's locked.
 - Doors and chests have to be inside a ward to be locked. A ward is its own authority, so locking one stops anyone it doesn't permit switching it off or editing its list.
 - Locks live on the object, so they hold across sessions and apply to every player.
@@ -175,6 +176,7 @@ A buildable portal that travels to any other hub linked to it.
 - `/uinotifications` — turns the corner activity messages on or off.
 - `/who` — lists everyone online. A server can limit this to admins.
 - `/playtime` — your time on the server, or `/playtime <player>` for someone else's.
+- `/tplist` — lists the warps this server offers.
 
 **Admin only**
 
@@ -183,10 +185,30 @@ A buildable portal that travels to any other hub linked to it.
 - `/heal` — fills your health, stamina and eitr.
 - `/repair` — mends everything you're carrying.
 - `/freebuild` — build without paying for materials.
+- `/addtp <name> [seconds]` — makes where you stand into a warp everyone can use.
+- `/deltp <name>` — removes a warp.
 
 ## Repair
 
 - Standing at a workbench or forge repairs everything you're carrying that the station could repair by hand.
+
+## Sleepers
+
+*Off by default.*
+
+- Log out and your body stays in the world, asleep and lootable.
+- What's in the body **is** your inventory: whatever is still there when you return is what you get, so being robbed costs you something real.
+- Creatures ignore sleeping bodies. Players can destroy them.
+- Your body is kept up to date every few seconds while you play, so anything picked up in the last moments before you log out may not make it in.
+
+## Server characters
+
+*Off by default.*
+
+- The server keeps each player's belongings and skills. The first time somebody joins, their inventory is emptied and their skills start at zero, so nothing can be carried in from another world.
+- Joining shows a notice first. Until a player accepts it they can't move, open their inventory, be hurt, or leave a body behind — and nothing is wiped. There's a button to leave instead.
+- Characters are stored against the player's platform ID, not their character name, so renaming doesn't pick up somebody else's things.
+- This stops importing by anyone playing the game normally. It is not anti-cheat: Valheim keeps characters on each player's own machine, so a modified client could still lie. Version enforcement raises the bar without removing it.
 
 ## Server settings worth knowing
 
@@ -201,6 +223,7 @@ A buildable portal that travels to any other hub linked to it.
 - **No portals:** ordinary portals can be removed from the build menu, leaving Portal Hubs as the only travel.
 - **Hub travel cost:** each hub journey can cost an item, set in the config.
 - **`/who` for admins only**, if you'd rather players couldn't see who's online.
+- **Hide or disable commands:** keep chosen commands out of `/kt` and the game's `/help`, or refuse them outright so nobody can use them.
 - Personal choices such as the compass, activity feed, auto-shield and camera placement are kept per player and are never overwritten by the server. Players can change those from the in-game menu even on a server they don't administer.
 
 ## Server tools
