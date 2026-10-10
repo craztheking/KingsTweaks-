@@ -187,6 +187,7 @@ A buildable portal that travels to any other hub linked to it.
 - `/freebuild` — build without paying for materials.
 - `/addtp <name> [seconds]` — makes where you stand into a warp everyone can use.
 - `/deltp <name>` — removes a warp.
+- `/sleeperpurge confirm` — removes every sleeping body in the world. It asks for the word `confirm` because without server characters a body holds its owner's inventory.
 
 ## Repair
 
@@ -198,8 +199,11 @@ A buildable portal that travels to any other hub linked to it.
 
 - Log out and your body stays in the world, asleep and lootable.
 - What's in the body **is** your inventory: whatever is still there when you return is what you get, so being robbed costs you something real.
+- A body is only visible and lootable while its owner is offline. While you're playing, nobody can see or open yours.
 - Creatures ignore sleeping bodies. Players can destroy them.
 - Your body is kept up to date every few seconds while you play, so anything picked up in the last moments before you log out may not make it in.
+- Dying empties your body: what you were carrying is in your tombstone, so there's nothing left behind to loot twice.
+- `/sleeperpurge confirm` clears every body out of the world, for an admin who wants a clean slate.
 
 ## Server characters
 
@@ -208,6 +212,8 @@ A buildable portal that travels to any other hub linked to it.
 - The server keeps each player's belongings and skills. The first time somebody joins, their inventory is emptied and their skills start at zero, so nothing can be carried in from another world.
 - Joining shows a notice first. Until a player accepts it they can't move, open their inventory, be hurt, or leave a body behind — and nothing is wiped. There's a button to leave instead.
 - Characters are stored against the player's platform ID, not their character name, so renaming doesn't pick up somebody else's things.
+- Each world keeps its own store, so hosting two worlds from one install doesn't let a character cross between them.
+- Looting somebody's sleeping body changes what the server is holding for them, so theft sticks even after a restart.
 - This stops importing by anyone playing the game normally. It is not anti-cheat: Valheim keeps characters on each player's own machine, so a modified client could still lie. Version enforcement raises the bar without removing it.
 
 ## Server settings worth knowing
@@ -233,7 +239,7 @@ A buildable portal that travels to any other hub linked to it.
 - **World backups:** after the game saves, the world files are copied into a backups folder, keeping as many as you choose and deleting the oldest.
 - **Scheduled restarts:** at times you set, everyone is warned in chat, the world is saved and the server closes. Starting it again is up to your start script or service, since a game can't relaunch itself.
 - **Playtime tracking** per player, surviving restarts, readable with `/playtime`.
-- **Version enforcement:** players must run the same KingsTweaks version to join. Anyone without the mod is disconnected.
+- **Version enforcement:** players must run the same KingsTweaks version to join, matched exactly, and anyone without the mod is disconnected. On by default — update the server and your players together, or turn it off while you're mid-update.
 
 ---
 
