@@ -16,11 +16,13 @@ Editing the config file on a running server applies the changes live and pushes 
 - Optional protection from water damage (waves, tides, flooded ground).
 - Optional: only protect structures inside an active ward, so abandoned builds still decay.
 - No stamina cost for building, deconstructing, hoeing and planting inside a ward.
+- **Workstation upgrades place freely:** anvils, the adze, tool shelf, forge cooler, chopping block and the rest no longer ask for more space, so they can sit side by side or against a wall. Their distance from the station is adjustable too — 10 m by default instead of the game's 5.
 - Optional **build anywhere**: removes the no-build zones in caves, crypts, dungeons and around boss altars.
 
 ## Wards
 
 - Adjustable ward radius.
+- **Range rings:** hold your stow key on a ward or a crafting station to see exactly how far it reaches, with the distance in metres. It fades on its own after a few seconds and only you see it. Useful with an adjusted ward radius, where the game's own circle no longer matches.
 - Creatures don't spawn inside an active ward, so mobs stop appearing in your base.
 
 ## Fires and torches
@@ -29,7 +31,7 @@ Editing the config file on a running server applies the changes live and pushes 
 
 ## Buildable chests
 
-- **Fuel Chest** — stock it with wood, resin or any other fire fuel. Once a day it refills every fire and torch in range, each with its correct fuel type. Burned-out fires relight automatically.
+- **Fuel Chest** — stock it with wood, resin or any other fire fuel. Once a day it refills every fire and torch in range, each with its correct fuel type. Burned-out fires relight automatically. If it runs short it says what to put in — "Needs 24 Wood, 6 Resin" on the chest itself, so anyone walking past can top it up.
 - **Item Collector** — automatically pulls in dropped items within range. Only takes items that have been on the ground for 5 minutes (configurable), so it never grabs items right after they're dropped.
 - **Trash Can** — anything left inside is permanently deleted when you close it.
 - **Upkeep Chest** — once a day it repairs every damaged structure in range, paying a share of each piece's own build materials from the chest. The cost multiplier is configurable, and 0 makes repairs free.
@@ -86,7 +88,7 @@ A buildable portal that travels to any other hub linked to it.
 - **Ranks:** whoever makes the team leads it. The leader can promote members to officer, demote them, remove anyone, and hand the team over. Officers can invite and remove ordinary members. If the leader leaves, an officer takes over.
 - **Team chat** with `/t your message`.
 - **Map pings** are only seen by your own team. Players with no team see pings as normal.
-- **A health list** under the minimap, showing each team mate and how they're doing, with no panel in the way.
+- **A team list** under the minimap: each mate's name, a health bar with the real numbers, an arrow pointing the way to them and how far off they are. The arrow turns with you, so it points where to walk; the letter after the distance is the compass direction. Names are coloured by rank, and only mates who are actually online are listed.
 - **Wards let your team through** without adding anyone by hand.
 - Teams and ranks survive restarts.
 
@@ -96,6 +98,8 @@ A buildable portal that travels to any other hub linked to it.
 - `/tpr <player>` asks if you can travel to them; `/tphere <player>` asks them to come to you. They accept with `/tpa` (or `/tpaccept`) and refuse with `/tpdeny`.
 - A countdown before you arrive, cancelled if you're hit, plus a cooldown between journeys.
 - Travel is refused for a while after you've taken damage and while an enemy is close by. All of it is configurable, and a server can turn the whole thing off.
+- **Not while over-encumbered:** a full load has to be carried or sailed home. Checked again at the moment you arrive, so you can't load up during the countdown.
+- **Metals:** by default the travel commands won't carry ore, bars or anything else a portal refuses. This is a separate setting from the portal one, so a server can let portals take metal while `/home` still can't.
 - **Server warps:** an admin stands somewhere and runs `/addtp trader 300` to make `/trader` available to everyone, with a five minute wait between uses. `/tplist` shows what a server offers. Warps use the same countdown and combat rules as everything else, so they aren't an escape hatch.
 
 ## Combat
@@ -141,8 +145,8 @@ A buildable portal that travels to any other hub linked to it.
 - **Compass** across the top of the screen, showing headings plus your map pins with their icons and distances. Pins you've crossed out on the map are left off, and it hides while the full map is open. Toggle with `/compass`.
 - **First person:** zoom all the way in and the camera moves to your eyes; zoom back out for the normal view. Your body faces where you look, so you can walk backwards without turning around. The camera follows your head, so it ducks when you crouch and sit, and head bob can be turned off. Every camera setting can be adjusted from the in-game menu and applies instantly, so you can find your preferred view while looking at it. Servers can disable first person or require it.
 - **First run hint:** the first time you play, a message tells you which key opens the settings. Only shown to players who can actually change them.
-- **In-game settings menu** on the Home key. Admins can change any setting live, and every player can change their own settings there even on someone else's server.
-- **Activity feed:** short messages on the left when your chests do something. Toggle with `/uinotifications`.
+- **In-game settings menu** on the Home key, split into two lists with a button to swap between them: the **server settings** that are the rules everyone plays by, and **my settings**, the display and comfort choices that follow you from server to server. Admins can change any setting live, and every player can change their own even on someone else's server.
+- **Activity feed:** short messages on the left when your chests do something. A chest that keeps being short of something says so once when you come to it and then only every few minutes, instead of every few seconds. Toggle with `/uinotifications`.
 - **Mist clearing:** `/mist` clears the Mistlands fog around you, with an adjustable radius. Admins can disable it server-wide.
 - Optional: hide Yggdrasil, the giant tree in the sky.
 
