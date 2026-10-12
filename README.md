@@ -154,7 +154,7 @@ A buildable portal that travels to any other hub linked to it.
 - **Compass** across the top of the screen, showing headings plus your map pins with their icons and distances. Pins you've crossed out on the map are left off, and it hides while the full map is open. Toggle with `/compass`.
 - **First person:** zoom all the way in and the camera moves to your eyes; zoom back out for the normal view. Your body faces where you look, so you can walk backwards without turning around. The camera follows your head, so it ducks when you crouch and sit, and head bob can be turned off. Every camera setting can be adjusted from the in-game menu and applies instantly, so you can find your preferred view while looking at it. Servers can disable first person or require it.
 - **First run hint:** the first time you play, a message tells you which key opens the settings. Only shown to players who can actually change them.
-- **In-game settings menu** on the Home key, split into two lists with a button to swap between them: the **server settings** that are the rules everyone plays by, and **my settings**, the display and comfort choices that follow you from server to server. Admins can change any setting live, and every player can change their own even on someone else's server.
+- **In-game settings menu** on the Home key, with a row of tabs across the top. **Server settings** are the rules everyone plays by; **my settings** are the display and comfort choices that follow you from server to server. Admins can change any setting live, and every player can change their own even on someone else's server. Admins get five more tabs — see the admin panel below.
 - **Activity feed:** short messages on the left when your chests do something. A chest that keeps being short of something says so once when you come to it and then only every few minutes, instead of every few seconds. Toggle with `/uinotifications`.
 - **Mist clearing:** `/mist` clears the Mistlands fog around you, with an adjustable radius. Admins can disable it server-wide.
 - **Nothing fires while you're typing.** None of the keys this mod watches do anything in chat, on a sign, in the inventory or in a menu, so writing a message never locks a chest or opens a door behind you.
@@ -245,8 +245,19 @@ Commands work however they're typed — `/Home` and `/HOME` do the same as `/hom
 - **No portals:** ordinary portals can be removed from the build menu, leaving Portal Hubs as the only travel.
 - **Hub travel cost:** each hub journey can cost an item, set in the config.
 - **`/who` for admins only**, if you'd rather players couldn't see who's online.
-- **Hide or disable commands:** keep chosen commands out of `/kt` and the game's `/help`, or refuse them outright so nobody can use them.
+- **Hide or disable commands:** keep chosen commands out of `/kt` and the game's `/help`, or refuse them outright so nobody can use them. The Commands tab of the admin panel does this with a switch per command.
+- **Join message:** a line of your own shown to each player once when they arrive, with `{version}` replaced by the mod version. It ends with "Type /kt for all commands" so players find the command list without being told; that sentence can be switched off.
 - Personal choices such as the compass, activity feed, auto-shield and camera placement are kept per player and are never overwritten by the server. Players can change those from the in-game menu even on a server they don't administer.
+
+## Admin panel
+
+Open the settings menu with Home and, if the server says you're an admin, five more tabs appear beside the settings. Everything on them is checked by the server before it happens — the buttons ask, the server decides.
+
+- **Players:** everyone online, with how long they've been on the server, and a button each to kick, ban or make them an admin. Banning asks you why, and the reason is kept.
+- **Bans:** everyone banned, with the reason and the date it was given, and a button to lift it. You can also ban somebody who isn't online by typing their Steam64 ID followed by the reason. Valheim has nowhere to record a reason, so KingsTweaks keeps them in a file of its own next to the config.
+- **Allowed:** the server's allowed list, with a button to remove a name and a box to add one. While the list is empty anybody may join; adding a single name shuts out everybody else, and the page says so.
+- **Tools:** one-tap fly, no cost, god mode, ghost, tame nearby, kill nearby, remove drops and dev commands, plus heal and repair and the free-build toggle. A spawn row takes an item or creature name and an amount and spawns it.
+- **Commands:** every KingsTweaks command with an on/off switch for whether it appears in `/kt`. A command the server has disabled outright is shown as disabled rather than offered.
 
 ## Server tools
 
