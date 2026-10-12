@@ -16,13 +16,13 @@ Editing the config file on a running server applies the changes live and pushes 
 - Optional protection from water damage (waves, tides, flooded ground).
 - Optional: only protect structures inside an active ward, so abandoned builds still decay.
 - No stamina cost for building, deconstructing, hoeing and planting inside a ward.
+- **Carts come apart with the hammer**, giving their materials back. A cart with anything in it has to be emptied first, so nothing is destroyed with it.
 - **Workstation upgrades place freely:** anvils, the adze, tool shelf, forge cooler, chopping block and the rest no longer ask for more space, so they can sit side by side or against a wall. Their distance from the station is adjustable too — 10 m by default instead of the game's 5.
 - Optional **build anywhere**: removes the no-build zones in caves, crypts, dungeons and around boss altars.
 
 ## Wards
 
 - Adjustable ward radius.
-- **Range rings:** hold your stow key on a ward or a crafting station to see exactly how far it reaches, with the distance in metres. It fades on its own after a few seconds and only you see it. Useful with an adjusted ward radius, where the game's own circle no longer matches.
 - Creatures don't spawn inside an active ward, so mobs stop appearing in your base.
 
 ## Fires and torches
@@ -35,9 +35,9 @@ Editing the config file on a running server applies the changes live and pushes 
 - **Item Collector** — automatically pulls in dropped items within range. Only takes items that have been on the ground for 5 minutes (configurable), so it never grabs items right after they're dropped.
 - **Trash Can** — anything left inside is permanently deleted when you close it.
 - **Upkeep Chest** — once a day it repairs every damaged structure in range, paying a share of each piece's own build materials from the chest. The cost multiplier is configurable, and 0 makes repairs free.
-- **Sorter Chest** — pushes whatever you put inside into nearby chests that already hold the same item, moving what fits when a chest is full and telling you what has nowhere to go.
+- **Sorter Chest** — pushes whatever you put inside into nearby chests that already hold the same item. It names where things went — "20 Stone to \"ores\"" — moves what fits when a chest is full, and tells you what has nowhere to go.
 - **Smelter Chest** — feeds ore and fuel to smelters, kilns, furnaces and blast furnaces in range, and collects what they produce.
-- **Trough** — tame animals eat from it instead of being hand-fed. It only puts out food the animals in range actually eat, and only when they're hungry.
+- **Trough** — tame animals eat from it instead of being hand-fed. It only puts out food the animals in range actually eat, and only when they're hungry, and it tosses each item towards the animal rather than dropping it on the trough.
 
 ## Crafting and storage
 
@@ -67,6 +67,7 @@ A buildable portal that travels to any other hub linked to it.
 - Deconstruct boats with the hammer to get your materials back.
 - Boats you build get a map marker that follows them, using the boat's own icon, and disappears when the boat does.
 - **Experimental:** build on boats. Pieces placed while standing on a boat attach to it and sail with it.
+- **Creatures leave empty boats alone.** A boat with nobody aboard can't be damaged by wildlife, so a serpent doesn't eat the longship you left at the dock. Players can still break it, and a boat somebody is standing on is fair game as usual.
 
 ## Tames
 
@@ -88,6 +89,7 @@ A buildable portal that travels to any other hub linked to it.
 - **Ranks:** whoever makes the team leads it. The leader can promote members to officer, demote them, remove anyone, and hand the team over. Officers can invite and remove ordinary members. If the leader leaves, an officer takes over.
 - **Team chat** with `/t your message`.
 - **Map pings** are only seen by your own team. Players with no team see pings as normal.
+- **Team mates on your map**, whether or not they've switched their own map sharing on. Only the team sees them, so nobody is announced to the rest of the server.
 - **A team list** under the minimap: each mate's name, a health bar with the real numbers, an arrow pointing the way to them and how far off they are. The arrow turns with you, so it points where to walk; the letter after the distance is the compass direction. Names are coloured by rank, and only mates who are actually online are listed.
 - **Wards let your team through** without adding anyone by hand.
 - Teams and ranks survive restarts.
@@ -104,6 +106,9 @@ A buildable portal that travels to any other hub linked to it.
 
 ## Combat
 
+- **Thrown spears come back to you** instead of being left where they landed. A spear you deliberately drop on the ground stays dropped.
+- **Your torch stays lit** when you take out the hammer, hoe or cultivator, so building at night isn't done in the dark.
+- Optional: **no skill loss on death**. Off by default.
 - Your shield is drawn automatically when you equip a one-handed weapon, bringing back whichever shield you last carried. Toggle with `/autoshield`.
 - **Guardian power resets when you die**, so you respawn ready instead of carrying a cooldown through death.
 
@@ -127,11 +132,15 @@ A buildable portal that travels to any other hub linked to it.
 
 ## World and comfort
 
+- **No tree stumps:** optionally, felling a tree leaves nothing behind to chop a second time. The stump still gives up its wood, so nothing is lost. Off by default. Only trees cut down while it's on are affected — stumps already standing in your world, and the ones that are part of the landscape, are left alone.
 - Separate multipliers for how long, or short, days and nights last.
 - Comfort pieces count from farther away (20 m by default instead of 10 m), so big halls reach higher comfort levels.
 
 ## Map
 
+- **Cartography tables share the map, not your pins.** The exploration passes between players as usual; nobody hands over their base, portals and stashes by accident.
+- Optional: hide the **"Day 12"** message each morning. Off by default, and each player's own choice.
+- **Clear death markers:** a button on the full map removes every death marker at once, instead of right-clicking them one at a time.
 - **Exploration multiplier:** choose how much of the map you uncover as you travel. 2 reveals twice as far as normal, 0.5 half as far. Map you already have stays as it is.
 
 ## Dropped items
@@ -148,6 +157,7 @@ A buildable portal that travels to any other hub linked to it.
 - **In-game settings menu** on the Home key, split into two lists with a button to swap between them: the **server settings** that are the rules everyone plays by, and **my settings**, the display and comfort choices that follow you from server to server. Admins can change any setting live, and every player can change their own even on someone else's server.
 - **Activity feed:** short messages on the left when your chests do something. A chest that keeps being short of something says so once when you come to it and then only every few minutes, instead of every few seconds. Toggle with `/uinotifications`.
 - **Mist clearing:** `/mist` clears the Mistlands fog around you, with an adjustable radius. Admins can disable it server-wide.
+- **Nothing fires while you're typing.** None of the keys this mod watches do anything in chat, on a sign, in the inventory or in a menu, so writing a message never locks a chest or opens a door behind you.
 - Optional: hide Yggdrasil, the giant tree in the sky.
 
 ## Appearance
@@ -164,6 +174,8 @@ A buildable portal that travels to any other hub linked to it.
 - Message of the day, shown once when a player joins.
 
 ## Commands
+
+Commands work however they're typed — `/Home` and `/HOME` do the same as `/home`. That applies to the game's own commands too, not just these.
 
 - `/kt` — lists every KingsTweaks command. The game's own `/help` lists everything else.
 - `/unstuck` — moves you to solid ground nearby. Can be disabled server-side, with a cooldown.
